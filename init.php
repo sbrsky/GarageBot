@@ -5,7 +5,7 @@ include ('config.php');
 // Receive  text messages
 $telegramApi = new TelegramBot();
 $readyToRecieveNumberPlate = false;
-
+  var_dump('Ботик успешно запустило. Пока нет ошибочек, он работает-с');
 while (true) {
     sleep(2);
     $updates = $telegramApi->getUpdates();
@@ -34,7 +34,7 @@ while (true) {
         // Authorization check
         if (!$telegramApi->checkUser($chatid)){
             $telegramApi->sendMessage($chatid,"Tikai Autorizeti. Jauta Dorfman.lv administratoru" );
-            var_dump($chatid);
+           // var_dump($chatid);
             break;
         }
         if (isset($update->message->video)) {
@@ -123,7 +123,7 @@ while (true) {
                 }
             }
         }
-
+        $text .= "\n /getnumberplate - Узнать номер автомашины //\n /Ievadit numuru - Ввести номер Автомашины \n _Важно_ - Вы можете закачивать видео, только если указали номер А\М. НЕ забудьте проверить какую машину редактируете";
         $telegramApi->sendMessage($chatid,$text);
         }
 

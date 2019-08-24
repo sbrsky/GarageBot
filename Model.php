@@ -2,10 +2,10 @@
 include ('Database.php');
 Class Model extends Database
 {
-/*    public function __construct()
+    public function __construct()
     {
         parent::__construct();
-    }*/
+    }
 
     public function insertToBase($sql,$values = '')
     {

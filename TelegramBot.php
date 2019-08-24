@@ -4,6 +4,7 @@ class TelegramBot
 {
     protected $token = '914220148:AAHznTbsXetdo8vXtnSocEY4VJy8L39CWyg';
     protected $updateId;
+    protected $userTable = 'bot_admin';
 
     //Car variables;
     public $carNumber;
@@ -114,11 +115,14 @@ class TelegramBot
      //   $user = $this->db->selectAllFromTable('users');
       //  $user = $this->db->fetchAll('"select * from user');
         require_once ('kvazi_baza.php');
+        $users = $this->db->selectAllFromTable($this->userTable);
+     //   var_dump($users);die;
         $userdata = kvazi_baza::$user1;
         $status = false;
-        if (!empty($userdata)) {
-            foreach ( $userdata as $user) {
-                if ($user == $thisUser ) {
+        if (!empty($users)) {
+            foreach ( $users as $user) {
+                //var_dump($user["idn"]);die;
+                if ($user['idn'] == $thisUser ) {
                     $status = true;
                 }
             }
