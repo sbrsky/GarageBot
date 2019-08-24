@@ -5,11 +5,15 @@ class TelegramBot
     protected $token = '914220148:AAHznTbsXetdo8vXtnSocEY4VJy8L39CWyg';
     protected $updateId;
     protected $userTable = 'bot_admin';
+    protected $carTable = 'ser_masina';
+    protected $nameTable = 'bot_customer';
 
     //Car variables;
     public $carNumber;
+    protected $carId = 0;
     //Database
     protected $db;
+    private $carEmail;
 
     protected function query($method, $params= [])
     {
@@ -90,6 +94,22 @@ class TelegramBot
         $path = "video/" . $fileId . '.mp4'; // Where the file should be saved to
         $link = $url; // Download link
         file_put_contents($path, file_get_contents($link));
+        $this->saveFileToDatabase($fileId);
+    }
+    protected function saveFileToDatabase($fileId)
+    {
+        $arr = array(
+            "image" => $fileId . ".mp4",
+            "idCar" => $this->carId,
+            "category" => 'v',
+                "email" => $this->getCarEmail(),
+            "carNumer" => $this->carNumber,
+            "keyController" => $this->generateRandomString()
+        );
+        $this->db = new Model();
+        $permitted = array("image","idCar","category","email","carNumer","keyController");
+        $sql = "INSERT INTO $this->nameTable SET ".$this->pdoPrepareSql($permitted,$values,$arr);
+        $this->db->insertToBase($sql,$values);
     }
     public function makeSureNumber($chatid){
         if (empty($this->carNumber)){
@@ -110,23 +130,86 @@ class TelegramBot
         return $this->carNumber;
     }
 
-    public function checkUser($thisUser) {
-        $this->db =  new Model();
-     //   $user = $this->db->selectAllFromTable('users');
-      //  $user = $this->db->fetchAll('"select * from user');
-        require_once ('kvazi_baza.php');
+    public function checkUser($thisUser)
+    {
+        $this->db = new Model();
+        //   $user = $this->db->selectAllFromTable('users');
+        //  $user = $this->db->fetchAll('"select * from user');
+        require_once('kvazi_baza.php');
         $users = $this->db->selectAllFromTable($this->userTable);
-     //   var_dump($users);die;
+        //   var_dump($users);die;
         $userdata = kvazi_baza::$user1;
         $status = false;
         if (!empty($users)) {
-            foreach ( $users as $user) {
+            foreach ($users as $user) {
                 //var_dump($user["idn"]);die;
-                if ($user['idn'] == $thisUser ) {
+                if ($user['idn'] == $thisUser) {
                     $status = true;
                 }
             }
-}
+        }
         return $status;
     }
+    public function checkCar($thisCarPlate)
+    {
+        $this->db = new Model();
+        //   $user = $this->db->selectAllFromTable('users');
+        //  $user = $this->db->fetchAll('"select * from user');
+        $cars = $this->db->selectAllFromTable($this->carTable);
+        //   var_dump($users);die;
+        $status = false;
+        if (!empty($cars)) {
+            foreach ($cars as $car) {
+              //  var_dump($car["mas_regnumer"]);die;
+                if ($car['mas_regnumer'] == $thisCarPlate) {
+                    $this->carId = $car['id_mas'];
+                    $this->carEmail = $car['mas_email'];
+                    $status = true;
+
+                }
+            }
+        }
+        return $status;
+    }
+
+    /**
+     * @return int
+     */
+    public function getCarId()
+    {
+        return $this->carId;
+    }
+    public function pdoPrepareSql($permitted, &$values, $source = array())
+    {
+        $set = '';
+        $values = array();
+
+        if (!$source) $source = &$_POST;
+        foreach ($permitted as $field) {
+            if (isset($source[$field])) {
+                $set.="`".str_replace("`","``",$field)."`". "=:$field, ";
+                $values[$field] = $source[$field];
+            }
+        }
+        return substr($set, 0, -2);
+    }
+    function generateRandomString($length = 10) {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCarEmail()
+    {
+        return $this->carEmail;
+    }
+
+
 }

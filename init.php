@@ -16,10 +16,12 @@ while (true) {
     $text_turpinat = 'Turpinat video upload';
     $text_galvenaMenu = 'Galvena menu';
     $text_uzzinat_numuru = '/getnumberplate';
+    $help = '/help';
 
     $keyMenu = array($text_ievadit, $text_atpakal, $text_uzzinat_numuru);
     $keyAfterVideo = array($text_turpinat, $text_atpakal,);
     $keyAfterMessage = array($text_galvenaMenu, $text_turpinat);
+    $keyGalvenaMenu = array($text_galvenaMenu, $help);
 
     foreach ($updates as $update) {
       //  var_dump($update);die;
@@ -44,6 +46,9 @@ while (true) {
                 $telegramApi->sendMessageKeyboard($chatid,$keyMenu);
             } else {
                 // receive video
+                /*
+                 * We checking for video not exceeds 25mb
+                 */
                 if ($update->message->video->file_size < 25000000)
                 {
                     $fileid = $update->message->video->file_id;
@@ -60,11 +65,19 @@ while (true) {
         }
         else if (isset($update->message->text)) {
             $incomingText = $update->message->text;
-            if ($readyToRecieveNumberPlate) {
-                $telegramApi->setCarNumber($incomingText);
-                $readyToRecieveNumberPlate = false;
-                $text = 'Теперь вы редактируете машину :' . $telegramApi->carNumber;
-                $telegramApi->sendMessageKeyboard($chatid,$keyAfterMessage);
+            if ($readyToRecieveNumberPlate && $incomingText != $text_galvenaMenu) {
+                if (!$telegramApi->checkCar($incomingText)){
+                    $text = 'Такой машины в нашей базе данных нет :' . $telegramApi->carNumber . "\n Попробуйте еще раз";
+                    $telegramApi->sendMessageKeyboard($chatid, $keyGalvenaMenu);
+                }
+                else {
+                    $telegramApi->setCarNumber($incomingText);
+                    $readyToRecieveNumberPlate = false;
+                    $text = 'Теперь вы редактируете машину :' . $telegramApi->carNumber;
+                    $telegramApi->sendMessageKeyboard($chatid,$keyAfterMessage);
+                }
+
+
             }
             else {
                 $text_ievadit ='Ievadit numuru';
@@ -110,7 +123,7 @@ while (true) {
                         break;
                     case "/getnumberplate":
                         if (!empty($telegramApi->getCarNumber())){
-                            $text = "Ваше транспортное средство : " . $telegramApi->getCarNumber();
+                            $text = "Ваше транспортное средство : " . $telegramApi->getCarNumber() . "\n It's ID : " . $telegramApi->getCarId();
                             $telegramApi->sendMessageKeyboard($chatid,$keyAfterVideo);
                         } else {
                             $text = 'Траснопортное средство не установлено';

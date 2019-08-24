@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fcb0fe51-efde-4297-bb57-1f7d0ada224d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/Database.php" beforeDir="false" afterPath="$PROJECT_DIR$/Database.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Model.php" beforeDir="false" afterPath="$PROJECT_DIR$/Model.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/TelegramBot.php" beforeDir="false" afterPath="$PROJECT_DIR$/TelegramBot.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/init.php" afterDir="false" />
     </list>
@@ -19,34 +17,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/init.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="125" column="227" selection-start-line="125" selection-start-column="227" selection-end-line="125" selection-end-column="227" />
+            <state relative-caret-position="174">
+              <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/composer.lock">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TelegramBot.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="363">
-              <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/curl/curl.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="56400">
-              <caret line="2350" column="9" selection-start-line="2350" selection-start-column="9" selection-end-line="2350" selection-end-column="9" />
+            <state relative-caret-position="334">
+              <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
             </state>
           </provider>
         </entry>
@@ -54,8 +38,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Model.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-79">
-              <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="5" />
+            <state relative-caret-position="261">
+              <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
             </state>
           </provider>
         </entry>
@@ -72,8 +56,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="428">
-              <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
+            <state relative-caret-position="329">
+              <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -95,6 +79,7 @@
       <find>oi</find>
       <find>test</find>
       <find>var_dump</find>
+      <find>var_d</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,8 +93,8 @@
         <option value="$PROJECT_DIR$/composer.json" />
         <option value="$PROJECT_DIR$/Database.php" />
         <option value="$PROJECT_DIR$/Model.php" />
-        <option value="$PROJECT_DIR$/TelegramBot.php" />
         <option value="$PROJECT_DIR$/init.php" />
+        <option value="$PROJECT_DIR$/TelegramBot.php" />
       </list>
     </option>
   </component>
@@ -131,8 +116,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="37" />
-    <option name="y" value="196" />
+    <option name="x" value="-10" />
+    <option name="y" value="40" />
     <option name="width" value="1450" />
     <option name="height" value="790" />
   </component>
@@ -202,15 +187,15 @@
       <workItem from="1566641343293" duration="7249000" />
       <workItem from="1566653193730" duration="6546000" />
       <workItem from="1566663416221" duration="1714000" />
-      <workItem from="1566665418554" duration="4265000" />
+      <workItem from="1566665418554" duration="9505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56251000" />
+    <option name="totallyTimeSpent" value="61491000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="33" width="1550" height="838" extended-state="7" />
+    <frame x="-7" y="33" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3328859" />
@@ -256,13 +241,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/curl/curl.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="56400">
-          <caret line="2350" column="9" selection-start-line="2350" selection-start-column="9" selection-end-line="2350" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/composer.json">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -273,24 +251,10 @@
     <entry file="file://$PROJECT_DIR$/composer.lock">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/config.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="23" column="28" selection-start-line="23" selection-start-column="28" selection-end-line="23" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Database.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
           <caret line="6" selection-start-line="6" selection-end-line="13" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Model.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-79">
-          <caret line="4" selection-start-line="4" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>
@@ -301,13 +265,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TelegramBot.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="363">
-          <caret line="124" column="36" selection-start-line="124" selection-start-column="36" selection-end-line="124" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/standard/standard_4.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="166">
@@ -315,10 +272,38 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/config.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="26" column="25" selection-start-line="26" selection-start-column="25" selection-end-line="26" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/php/lib/php.jar!/stubs/curl/curl.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="166">
+          <caret line="2350" column="9" selection-start-line="2350" selection-start-column="9" selection-end-line="2350" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/init.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="125" column="227" selection-start-line="125" selection-start-column="227" selection-end-line="125" selection-end-column="227" />
+        <state relative-caret-position="174">
+          <caret line="55" column="37" lean-forward="true" selection-start-line="55" selection-start-column="37" selection-end-line="55" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Model.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="261">
+          <caret line="15" column="5" lean-forward="true" selection-start-line="15" selection-start-column="5" selection-end-line="15" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TelegramBot.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="106" column="41" selection-start-line="106" selection-start-column="41" selection-end-line="106" selection-end-column="41" />
         </state>
       </provider>
     </entry>
