@@ -21,9 +21,9 @@ $image_path = realpath(dirname(__FILE__) . DIRSEP . '..' . DIRSEP) . DIRSEP. 'ph
 define ('IMAGE_PATH', $image_path);
 
  /*DATABASE LOGIN DETAILS*/
-define ('DBHOST', '127.0.0.1');
+define ('DBHOST', 'localhost');
 define ('DBUSER', 'root');
-define ('DBPASS', '');
+define ('DBPASS', 'root');
 define ('DBNAME', 'bot');
 define ('CHARSET', 'utf8mb4');
 define ('THUBN', 'th_');

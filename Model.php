@@ -11,7 +11,6 @@ Class Model extends Database
     {
         $stm = $this->pdo->prepare($sql);
                if ( $stm->execute($values)) {
-            header("Location: /");
         }
     }
 

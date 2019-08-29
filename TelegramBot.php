@@ -80,12 +80,12 @@ class TelegramBot
     public function sendMessageKeyboard($chat_id, array $keyboard)
     {
         $keyboard = array($keyboard);
-        $resp = array("keyboard" => $keyboard,"resize_keyboard" => true,"one_time_keyboard" => true);
+        $resp = array("keyboard" => $keyboard,"resize_keyboard" => false,"one_time_keyboard" => true);
         $reply = json_encode($resp);
 
         $response = $this->query('sendMessage', [
             'chat_id' => $chat_id,
-            'text' => 'Ludzu izveleties option',
+            'text' => 'Вы продолжаете работу с БОТом Дорфмана. Пожалуйста выберете опцию из меню внизу экрана',
             'reply_markup' => $reply
         ]);
         return $response;
