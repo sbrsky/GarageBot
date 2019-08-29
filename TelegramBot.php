@@ -2,7 +2,7 @@
 include ('Model.php');
 class TelegramBot
 {
-    protected $token = '914220148:AAHznTbsXetdo8vXtnSocEY4VJy8L39CWyg';
+    protected $token = '';
     protected $updateId;
     protected $userTable = 'bot_admin';
     protected $carTable = 'ser_masina';
@@ -14,6 +14,19 @@ class TelegramBot
     //Database
     protected $db;
     private $carEmail;
+
+    /**
+     * TelegramBot constructor.
+     * @param string $token
+     */
+    public function __construct()
+    {
+        $this->db = new Model();
+        $tokenArrFromTable = $this->db->selectAllFromTable('token');
+        $this->token = $tokenArrFromTable[0]['token'];
+        var_dump($this->token);
+    }
+
 
     protected function query($method, $params= [])
     {
